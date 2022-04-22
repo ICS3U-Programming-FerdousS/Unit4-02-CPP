@@ -11,7 +11,7 @@
 #include <string>
 
 int main() {
-  // initialize the loop counter and sum
+  // initialize the loop counter and factor
   int counter = 0;
   int facotr = 1;
   std::string user_num_string;
@@ -26,10 +26,14 @@ int main() {
   try {
         user_num_int = std::stoi(user_num_string);
          // run Do while loop to calculate facotor of number
-         do {
-           counter = counter + 1;
-           facotr = facotr * counter;
-           std::cout << "Tracking " << counter << " times through the loop.\n";
+          if (user_num_int < 0) {
+              std::cout <<"input was not a positive number" << std::endl;
+              exit(main());
+}
+          do {
+              counter = counter + 1;
+              facotr = facotr * counter;
+              std::cout << "Tracking " << counter << " times through the loop.\n";
   } while (counter < user_num_int);
   // display the factor to the user
   std::cout <<user_num_int <<" ! " << facotr << std::endl;
@@ -39,10 +43,5 @@ int main() {
   catch (std::invalid_argument) {
       std::cout <<"Invalid input" << std::endl;
 }
-         if (user_num_int == 0) {
-            std::cout <<user_num_int <<" ! " << "1" << std::endl;
-}       // check if user input number is above positve or negative
-    if (user_num_int < 0) {
-            std::cout <<"input was not a positive number" << std::endl;
-}
-}
+}   
+  
